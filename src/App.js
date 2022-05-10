@@ -2,11 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { NoPosts } from "./components/NoPosts/NoPosts";
 import { fetchPosts } from "./api/fetchPosts";
+import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
-  console.log(posts);
+
+  useEffect(() => {
+    dispatch(fetchPosts());
+    console.log(posts);
+  }, []);
+
   return (
     <div className="App">
       <button onClick={() => dispatch(fetchPosts())}>получить посты</button>

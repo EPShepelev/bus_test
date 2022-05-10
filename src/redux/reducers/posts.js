@@ -8,7 +8,7 @@ const initialState = {
 export const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_POSTS:
-      return { ...state, posts: [...state.posts, ...action.payload] };
+      return { ...state, posts: [...action.payload] };
     case FIND_TEXT:
       return state;
     default:
