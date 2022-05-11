@@ -10,10 +10,11 @@ export const postsReducer = (state = initialState, action) => {
     case GET_POSTS:
       return { ...state, posts: [...action.payload] };
     case FIND_TEXT:
-      return state;
+      return { ...state,  posts: state.posts.filter(post => post.title.includes(action.payload))};
     default:
       return state;
   }
 };
 
 export const postsAC = (payload) => ({ type: GET_POSTS, payload });
+export const searchAC = (payload) => ({ type: FIND_TEXT, payload });

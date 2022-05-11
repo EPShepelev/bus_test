@@ -4,6 +4,6 @@ export const fetchPosts = () => {
   return (dispatch) => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
-      .then((json) => postsAC(json));
+      .then((data) => dispatch( postsAC(data)));
   };
 };

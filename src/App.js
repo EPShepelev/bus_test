@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchPosts } from "./api/fetchPosts";
+import { searchAC } from "./redux/reducers/posts";
 import "./App.css";
 import { NoPosts } from "./components/NoPosts/NoPosts";
-import { fetchPosts } from "./api/fetchPosts";
-import { useEffect } from "react";
+import { Table } from "./components/Table/Table"
+import { Search } from "./components/Search/Search"
+import { Pagination } from "./components/Pagination/Pagination"
 
 function App() {
   const dispatch = useDispatch();
@@ -10,13 +14,14 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchPosts());
-    console.log(posts);
   }, []);
 
   return (
     <div className="App">
-      <button onClick={() => dispatch(fetchPosts())}>получить посты</button>
-      {posts.length > 0 ? <div>posts are here</div> : <NoPosts></NoPosts>}
+      <button onClick={()=>dispatch(searchAC("ne"))}>Filter! </button>
+      < Search/>
+      {posts.posts.length ? <Table posts={posts.posts}/> : <NoPosts></NoPosts>}
+      <Pagination />
     </div>
   );
 }

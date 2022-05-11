@@ -1,0 +1,16 @@
+.cell {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index {
+  width: 10%;
+}
+
+.title {
+  width: 20%;
+}
+
+.text {
+  width: 100%;
+}

@@ -1,3 +1,3 @@
 export const NoPosts = () => {
-  return <div>Посты не найдены!</div>;
+  return <div>Получаю данные, пожалуйста подождите! </div>;
 };
