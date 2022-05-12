@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   color: #474955;
+  margin-top: 16px;
 }
 
 .pages {
@@ -29,4 +30,18 @@
   color: #474955;
   border: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .number {
+    margin: 0 2px;
+  }
+  .pages {
+    font-size: 14px;
+  line-height: 19px;
+  }
+  .btn {
+    font-size: 18px;
+  line-height: 23px;
+  }
 }

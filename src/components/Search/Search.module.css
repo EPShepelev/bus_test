@@ -1,7 +1,6 @@
 .inner {
   background-color: #5a5c66;
   max-width: 631px;
-  width: 100%;
   margin-bottom: 16px;
   padding: 16px 24px;
   display: flex;
@@ -27,4 +26,10 @@
   background-position: center;
   width: 21px;
   height: 21px;
+}
+
+@media screen and (max-width: 768px) {
+  .inner {
+    padding: 10px 14px;
+  }
 }

@@ -1,16 +1,26 @@
-.cell {
+.row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border: 1px solid #E3E6EC;
+  align-items: stretch;
 }
 
 .index {
-  width: 10%;
+  width: 115px;
+  text-align: center;
+  padding: 10px;
 }
 
 .title {
-  width: 20%;
+  width: 100%;
+  border-left: 1px solid #E3E6EC;
+  padding: 10px;
 }
 
 .text {
   width: 100%;
+  padding-left: 11px;
+  border-left: 1px solid #E3E6EC;
+  padding: 10px;
 }
