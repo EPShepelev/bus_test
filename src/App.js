@@ -11,9 +11,7 @@ function App() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
 
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, []);
+ 
 
   return (
     <div className="App">
