@@ -2,8 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #E3E6EC;
+  border: 1px solid #e3e6ec;
   align-items: stretch;
+  color: #474955;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .index {
@@ -14,13 +18,13 @@
 
 .title {
   width: 100%;
-  border-left: 1px solid #E3E6EC;
+  border-left: 1px solid #e3e6ec;
   padding: 10px;
 }
 
 .text {
   width: 100%;
   padding-left: 11px;
-  border-left: 1px solid #E3E6EC;
+  border-left: 1px solid #e3e6ec;
   padding: 10px;
 }
