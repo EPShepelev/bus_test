@@ -10,7 +10,6 @@ import { Pagination } from "./components/Pagination/Pagination"
 function App() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
-  const searchResult = useSelector((state) => state.posts.searchResult);
 
   useEffect(() => {
     dispatch(fetchPosts());
@@ -19,7 +18,7 @@ function App() {
   return (
     <div className="App">
       < Search/>
-      {posts.length ? <Table posts={posts} searchResult={searchResult}/> : <NoPosts/>}
+      {posts.length ? <Table /> : <NoPosts/>}
       <Pagination />
     </div>
   );

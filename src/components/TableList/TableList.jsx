@@ -2,15 +2,15 @@ import { TableItem } from "../TableItem/TableItem";
 import style from "./TableList.module.css";
 import { useSelector } from "react-redux";
 
-export const TableList = ({ posts, searchResult }) => {
+export const TableList = () => {
 
+  const posts = useSelector((state) => state.posts.posts);
+  const searchResult = useSelector((state) => state.posts.searchResult);
   const isSearching = useSelector((state) => state.posts.isSearching);
-
-  const conditions = searchResult.length || isSearching
 
   return (
     <div className={style.wrapper}>
-      {conditions
+      {(searchResult.length || isSearching)
         ? searchResult.map((searchItem) => {
             return (
               <TableItem

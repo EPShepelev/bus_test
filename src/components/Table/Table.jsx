@@ -5,7 +5,7 @@ export const Table = ({posts, searchResult}) => {
   return (
     <div>
       <TableHeader />
-      <TableList posts={posts} searchResult={searchResult}/>
+      <TableList />
     </div>
   )
 }
