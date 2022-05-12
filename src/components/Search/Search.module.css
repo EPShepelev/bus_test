@@ -1,0 +1,30 @@
+.inner {
+  background-color: #5a5c66;
+  max-width: 631px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input {
+  background-color: #5a5c66;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 19px;
+  color: #fff;
+}
+.input::placeholder {
+  color: #b2b7bf;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  background-image: url("./img/search.svg");
+  background-size: contain;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+}
