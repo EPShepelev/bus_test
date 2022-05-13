@@ -1,3 +1,3 @@
-export const sortArray = (a, b) => {
-  return a.title.localeCompare(b.title);
+export const sortArray = (field) => {
+  return (a, b) => a[field] > b[field] ? 1 : -1;
 }
