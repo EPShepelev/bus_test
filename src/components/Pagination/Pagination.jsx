@@ -1,6 +1,5 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import style from "./Pagination.module.css";
-import { useDispatch } from "react-redux";
 import { setCurrentPageAC } from "../../redux/reducers/posts";
 import { useEffect } from "react";
 import { fetchPosts } from "../../api/fetchPosts";
@@ -17,7 +16,7 @@ export const Pagination = () => {
 
   useEffect(() => {
     dispatch(fetchPosts(currentPage, perPage));
-  }, [currentPage]);
+  }, [currentPage, perPage, dispatch]);
 
   return (
     <div className={style.wrapper}>

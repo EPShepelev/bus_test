@@ -1,29 +1,30 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { searchAC } from "../../redux/reducers/posts";
 import style from "./Search.module.css"
 
 export const Search = () => {
   const dispatch = useDispatch();
+  const isSearching = useSelector((state) => state.posts.isSearching);
   const [searchValue, setSearchValue] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
+  const [isSearchingValue, setIsSearchingValue] = useState(isSearching);
 
   const handleInputChange = (event) => {
     setSearchValue(event.target.value);
   };
 
   const handleInputFocus = () => {
-    setIsSearching(true)
+    setIsSearchingValue(true)
   };
 
   const handleInputBlur = () => {
-    setIsSearching(false)
+    setIsSearchingValue(false)
   };
 
 
   useEffect(() => {
-    dispatch(searchAC(searchValue, isSearching));
-  }, [searchValue, isSearching]);
+    dispatch(searchAC(searchValue, isSearchingValue));
+  }, [searchValue, isSearchingValue, dispatch]);
 
   return (
     <div className={style.inner}>

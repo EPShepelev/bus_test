@@ -25,11 +25,11 @@ export const postsReducer = (state = initialState, action) => {
     case SET_CURRENT_PAGE:
       return { ...state, currentPage: action.payload};
     case SORT_BY_ID:
-      return {...state, posts: [...state.posts.sort(sortArray("id"))]}
+      return {...state, posts: [...state.posts.sort(sortArray("id"))], searchResult: [...state.searchResult.sort(sortArray("id"))]}
     case SORT_BY_TITLE:
-      return {...state, posts: [...state.posts.sort(sortArray("title"))]}
+      return {...state, posts: [...state.posts.sort(sortArray("title"))], searchResult: [...state.searchResult.sort(sortArray("title"))]}
     case SORT_BY_TEXT:
-      return {...state, posts: [...state.posts.sort(sortArray("body"))]}
+      return {...state, posts: [...state.posts.sort(sortArray("body"))], searchResult: [...state.searchResult.sort(sortArray("body"))]}
     default:
       return state;
   }
