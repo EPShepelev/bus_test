@@ -8,18 +8,40 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 18px;
+  position: relative;
+}
+
+.row::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  left: 115px;
+  top: 0;
+  background-color: #e3e6ec;
 }
 
 .index {
+  flex-shrink: 0;
   width: 115px;
   text-align: center;
-  padding: 10px;
+  align-self: center;
 }
+
+@media screen and (max-width: 768px) {
+  .index {
+    width: 40px;
+  }
+  .row::before {
+    left: 40px;
+  }
+}
+
 
 .title {
   width: 100%;
-  border-left: 1px solid #e3e6ec;
   padding: 10px;
+  align-self: center;
 }
 
 .text {
@@ -28,3 +50,4 @@
   border-left: 1px solid #e3e6ec;
   padding: 10px;
 }
+

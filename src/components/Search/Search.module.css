@@ -7,6 +7,12 @@
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .inner {
+    padding: 10px 14px;
+  }
+}
+
 .input {
   background-color: #5a5c66;
   border: none;
@@ -14,10 +20,13 @@
   font-size: 14px;
   line-height: 19px;
   color: #fff;
+  width: 100%;
 }
+
 .input::placeholder {
   color: #b2b7bf;
 }
+
 .btn {
   background-color: transparent;
   border: none;
@@ -26,10 +35,4 @@
   background-position: center;
   width: 21px;
   height: 21px;
-}
-
-@media screen and (max-width: 768px) {
-  .inner {
-    padding: 10px 14px;
-  }
 }

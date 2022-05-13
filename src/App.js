@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "./api/fetchPosts";
+import { useSelector } from "react-redux";
 import "./App.css";
 import { NoPosts } from "./components/NoPosts/NoPosts";
 import { Table } from "./components/Table/Table"
@@ -8,10 +6,7 @@ import { Search } from "./components/Search/Search"
 import { Pagination } from "./components/Pagination/Pagination"
 
 function App() {
-  const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
-
- 
 
   return (
     <div className="App">

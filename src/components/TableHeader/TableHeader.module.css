@@ -9,10 +9,25 @@
 
 .index {
   width: 115px;
+  text-align: center;
 }
 
 .title,
 .text {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 19px 5px 16px;
+  }
+  .index {
+    width: 40px;
+  }
+  .title,
+  .text {
+    width: 100%;
+    text-align: center;
+  }
 }
