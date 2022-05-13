@@ -21,7 +21,7 @@ export const Pagination = () => {
 
   return (
     <div className={style.wrapper}>
-      <button className={style.btn}>Назад</button>
+      <button className={style.btn} disabled={currentPage === 1} onClick={() => dispatch(setCurrentPageAC(currentPage - 1))}>Назад</button>
       <div className={style.pages}>
         {pages.map((page, index) => {
           return (
@@ -37,7 +37,7 @@ export const Pagination = () => {
           );
         })}
       </div>
-      <button className={style.btn}>Далее</button>
+      <button className={style.btn} disabled={currentPage === pagesCount} onClick={() => dispatch(setCurrentPageAC(currentPage + 1))}>Далее</button>
     </div>
   );
 };

@@ -21,3 +21,12 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 768px) {
+  .block span {
+    padding-right: 0;
+  }
+  .block span::after {
+    display: none;
+  }
+}
