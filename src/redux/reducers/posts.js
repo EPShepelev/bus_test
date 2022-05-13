@@ -24,10 +24,6 @@ export const postsReducer = (state = initialState, action) => {
       return { ...state,  searchResult: state.posts.filter(post => post.title.includes(action.payload.text) || post.body.includes(action.payload.text)), isSearching: action.payload.isSearching};
     case SET_CURRENT_PAGE:
       return { ...state, currentPage: action.payload};
-    // case CURRENT_PAGE_NEXT:
-    //   return { ...state, currentPage: state.currentPage + 1};
-    // case CURRENT_PAGE_PREV:
-    //   return { ...state, currentPage: state.currentPage - 1};
     case SORT_BY_ID:
       return {...state, posts: [...state.posts.sort(sortArray("id"))]}
     case SORT_BY_TITLE:
