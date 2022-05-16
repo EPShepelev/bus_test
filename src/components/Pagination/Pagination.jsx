@@ -3,7 +3,8 @@ import style from "./Pagination.module.css";
 import { setCurrentPageAC } from "../../redux/reducers/posts";
 import { useEffect } from "react";
 import { fetchPosts } from "../../api/fetchPosts";
-import { pagesCreator } from "../../utils/pagesCreator"
+import { pagesCreator } from "../../utils/pagesCreator";
+import { Outlet, Link } from "react-router-dom";
 
 export const Pagination = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ export const Pagination = () => {
       <div className={style.pages}>
         {pages.map((page, index) => {
           return (
-            <span
+            <Link
+              to={`/pages/${page}`}
               className={`${style.number} ${
                 currentPage === page ? style.current : null
               }`}
@@ -32,11 +34,12 @@ export const Pagination = () => {
               onClick={(e) => dispatch(setCurrentPageAC(+(e.target.textContent)))}
             >
               {page}
-            </span>
+            </Link>
           );
         })}
       </div>
       <button className={style.btn} disabled={currentPage === pagesCount} onClick={() => dispatch(setCurrentPageAC(currentPage + 1))}>Далее</button>
+      <Outlet />
     </div>
   );
 };

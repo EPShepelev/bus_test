@@ -13,6 +13,11 @@
   font-style: italic;
 }
 
+.pages a {
+  text-decoration: none;
+  color: #474955;
+}
+
 .number {
   margin: 0 7px;
   cursor: pointer;
