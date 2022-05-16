@@ -8,29 +8,21 @@ export const TableList = () => {
   const searchResult = useSelector((state) => state.posts.searchResult);
   const isSearching = useSelector((state) => state.posts.isSearching);
 
+  let renderArray = []
+  isSearching ? renderArray = [...searchResult] : renderArray = [...posts]
+
   return (
     <div className={style.wrapper}>
-      {(searchResult.length || isSearching)
-        ? searchResult.map((searchItem) => {
-            return (
-              <TableItem
-                key={searchItem.id}
-                index={searchItem.id}
-                title={searchItem.title}
-                text={searchItem.body}
-              />
-            );
-          })
-        : posts.map((post) => {
-            return (
-              <TableItem
-                key={post.id}
-                index={post.id}
-                title={post.title}
-                text={post.body}
-              />
-            );
-          })}
+      {renderArray.map(item => {
+        return (
+          <TableItem
+            key={item.id}
+            index={item.id}
+            title={item.title}
+            text={item.body}
+          />
+        )
+      })}
     </div>
   );
 };
