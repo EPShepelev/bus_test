@@ -18,17 +18,17 @@
   color: #474955;
 }
 
+.pages a:hover {
+  color: #7EBC3C;
+}
+
 .number {
   margin: 0 7px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
 
-.number:hover {
-  color: #7EBC3C;
-}
-
-.current {
+a.current {
   color: #7EBC3C;
 }
 
